@@ -32,6 +32,7 @@ vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(cleaned_doc)
 
 feature_names = vectorizer.get_feature_names_out()
+
 tfidf_score = X.mean(axis=0).A1
 
 df_tfidf = pd.DataFrame({"word":feature_names, "tfidf_score":tfidf_score})
